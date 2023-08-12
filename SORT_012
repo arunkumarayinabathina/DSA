@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class sorting
+{
+    public void sort012(int[] nums)
+    {
+        int low=0;
+        int mid=0;
+        int high=nums.length-1;
+        while(mid<=high)
+        {
+            if(nums[mid]==0)
+            {
+                int temp=nums[low];
+                nums[low]=nums[mid];
+                nums[mid]=temp;
+                low++;
+                mid++;
+            }
+            else if(nums[mid]==1){
+                mid++;
+            }
+            else if(nums[mid]==2){
+                int ntemp=nums[mid];
+                nums[mid]=nums[high];
+                nums[high]=ntemp;
+                high--;
+            }
+        }
+    }
+}
+public class arr012
+{
+public static void main(String args[])
+{
+    sorting obj=new sorting();
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int[] arr=new int[n];
+     for(int i=0;i<n;i++)
+     {
+        arr[i]=sc.nextInt();
+     }
+     obj.sort012(arr);
+     for(int i=0;i<n;i++)
+    {
+        System.out.print(arr[i]+" ");
+    }
+}
+}
